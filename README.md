@@ -61,7 +61,7 @@ The implementation solves the $N$ - input parity classification problem using St
 : number of epocs 
 
 **Z**
-: defines the number of $k$ points in each batch as $k = 2^Z+1$
+: defines the number of $k$ points in each batch as $k = 2^{Z+1}$
 
 ### Output
 
@@ -87,7 +87,7 @@ The implementation solves the $N$ - input parity classification problem using En
 : number of epocs 
 
 **Z**
-: the number of $k$ points in each batch where $k = 2^Z+1$
+: the number of $k$ points in each batch where $k = 2^{Z+1}$
 
 **Fg**
 : the list of learning rates
@@ -120,18 +120,12 @@ The implementation solves the $N$ - input parity classification problem using En
 : number of epocs 
 
 **Z**
-: the number of $k$ points in each batch where $k = 2^Z+1$
-
-**stro**
-: learning rate _(depends on Z)_
-
-**Fg**
-: the list of learning rates
+: the number of $k$ points in each batch where $k = 2^{Z+1}$
 
 
 ### Output
 
-The script outputs statistics on the accuracy and the plot of the loss function (in log scale) vs the steps. Step denotes every update of the weights. Τhe first plot depicts the stochastic loss ( negative log likelihood ), The second depicts an objective loss whose evaluation does not depend on single measurements, but on mean values. 
+The script outputs statistics on the accuracy and the plot of the loss function (in log scale) vs the steps. Step denotes every update of the weights. Τhe first plot depicts a stochastic loss ( negative log likelihood ) that depends on the current experiment running. The second depicts an objective loss whose evaluation does not depend on single measurements, but on mean values. 
 
 **loko**
 : list that accumulates the final weights after optimization
